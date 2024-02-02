@@ -13,4 +13,4 @@ cmake
 
 `make`
 
-`./bin/eat -f <target binary path>`
+`./bin/elf_analysis_tool`
