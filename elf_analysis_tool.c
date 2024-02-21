@@ -1,14 +1,16 @@
-#include "LoadBinaryFile.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 
+#include "LoadBinaryFile.h"
+#include "ELFAnalysis.h"
+
 void PrintMenu( void )
 {
     printf( "0. Quit\n" );
     printf( "1. Print hex dump\n" );
+    printf( "2. Print ELF header\n" );
 }
 
 int main( int argc, char *argv[] )
@@ -52,6 +54,12 @@ int main( int argc, char *argv[] )
             case 1:
             {
                 PrintBinary( bin_info );
+                break;
+            }
+            case 2:
+            {
+                printf( "Check ELF Sign : %d\n", CheckELFSignature( bin_info ) );
+                printf( "ISA : %s\n", GetISA( bin_info ) );
                 break;
             }
             default:

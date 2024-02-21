@@ -1,10 +1,9 @@
-#include <stdint.h>
+#ifndef LOADBINARYFILE_H_
+#define LOADBINARYFILE_H_
 
-typedef struct BinaryInfo
-{
-    uint8_t *_binary_data;
-    uint64_t _size;
-} BinaryInfo;
+#include "types.h"
 
 void LoadBinaryFile( BinaryInfo *bin_info, char *bin_file_path );
 void PrintBinary( BinaryInfo *bin_info );
+
+#endif /* LOADBINARYFILE_H_ */
